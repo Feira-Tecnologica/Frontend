@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atribuição de notas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/notas_professores.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Simplify Material Icons import -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="container">
+          <img src="../img/topo.png" alt="Elemento decorativo" class="top-vector">
+          <img src="../img/logo_etec.png" alt="Logo ETEC" class="logo">
+          
+          <div class="content-container">
+            <div class="avaliacao">
+              <div class="header-avaliacao">
+                <i class="material-icons">arrow_back_ios</i>
+                <div class="breadcrumb">
+                  <a href="../index.html">Projeto</a> &gt; <span>Atribuição de notas</span>
+                </div>
+              </div>
+          
+              <!-- NOVA SEÇÃO: Atribuir Nota -->
+              <div class="atribuir-nota">
+                <h1><strong>Nome</strong><br>do projeto</h1>
+          
+                <div class="stand-info">
+                  <div class="stand-text">
+                    <strong>STAND 45</strong>
+                    <p>Informática - 2C<br>Manhã</p>
+                  </div>
+                  <img src="../img/ODS/ODS_8.png" alt="ODS 8" class="ods-img">
+                </div>
+          
+                <div class="tabela-notas">
+                  <div class="linha-titulo">
+                    <span class="titulo-avaliacao">Avaliação</span>
+                    <span class="titulo-nota">Nota</span>
+                  </div>
+          
+                  <div class="linha-item">
+                    <span class="criterio">Oralidade</span>
+                    <span class="nota">
+                      <input type="number" min="0" max="10" step="0.1" value="0" class="input-nota">
+                    </span>
+                  </div>
+                  <div class="linha-item">
+                    <span class="criterio">Postura</span>
+                    <span class="nota">
+                      <input type="number" min="0" max="10" step="0.1" value="0" class="input-nota">
+                    </span>
+                  </div>
+                  <div class="linha-item">
+                    <span class="criterio">Organização</span>
+                    <span class="nota">
+                      <input type="number" min="0" max="10" step="0.1" value="0" class="input-nota">
+                    </span>
+                  </div>
+                  <div class="linha-item">
+                    <span class="criterio">Criatividade</span>
+                    <span class="nota">
+                      <input type="number" min="0" max="10" step="0.1" value="0" class="input-nota">
+                    </span>
+                  </div>
+                  <div class="linha-item">
+                    <span class="criterio">Capricho</span>
+                    <span class="nota">
+                      <input type="number" min="0" max="10" step="0.1" value="0" class="input-nota">
+                    </span>
+                  </div>
+                  <div class="linha-item">
+                    <span class="criterio">Domínio</span>
+                    <span class="nota">
+                      <input type="number" min="0" max="10" step="0.1" value="0" class="input-nota">
+                    </span>
+                  </div>
+                  <div class="linha-item">
+                    <span class="criterio">Abordagem</span>
+                    <span class="nota">
+                      <input type="number" min="0" max="10" step="0.1" value="0" class="input-nota">
+                    </span>
+                  </div>
+                </div>
+          
+                <button class="btn-confirmar" id="btnConfirmar">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal de Confirmação -->
+        <div id="confirmModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <i class="material-icons warning-icon">warning</i>
+              <h2>Confirmação</h2>
+            </div>
+            <div class="modal-body">
+              <p>Deseja confirmar as notas atribuídas?</p>
+            </div>
+            <div class="modal-footer">
+              <button id="btnSim" class="btn-modal btn-sim">Sim</button>
+              <button id="btnNao" class="btn-modal btn-nao">Não</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal de Sucesso -->
+        <div id="successModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <i class="material-icons success-icon">check_circle</i>
+              <h2>Sucesso!</h2>
+            </div>
+            <div class="modal-body">
+              <p>Notas confirmadas com sucesso!</p>
+            </div>
+            <div class="modal-footer">
+              <button id="btnOk" class="btn-modal btn-ok">OK</button>
+            </div>
+          </div>
+        </div>
+
+        <script src="../js/notas_professores.js"></script>
+      </body>
+</html>
+
+

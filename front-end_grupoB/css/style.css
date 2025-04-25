@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  .container {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    background: #0d0e2b;
+    border-radius: 25px;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  .container .top-vector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+
+  .container .logo {
+    width: 90px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    margin-top: 60px;
+  }
+
+  .content-container {
+    background-color: #fff;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .avaliacao {
+    padding: 20px;
+  }
+
+  .header-avaliacao {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .avaliacao .material-symbols-outlined {
+    font-size: 20px;
+    color: #C31191;
+    cursor: pointer;
+  }
+
+  .avaliacao .material-icons {
+    font-size: 20px;
+    color: #C31191;
+    cursor: pointer;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1c1c1c;
+    flex: 1;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .breadcrumb {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1c1c1c;
+  }
+
+  .breadcrumb a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #9957E4;
+  }
+
+  .breadcrumb span {
+    font-weight: 600;
+  }
+
+  body {
+    background: linear-gradient(to top, #702092, #1a1333);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    min-height: 100vh;
+  }
+
+ 
+  @media (max-width: 480px) {
+    .container {
+      margin: 0;
+    }
+
+  }
+
+  /* Remover estilos não necessários */
+  .header, .white-bg {
+    display: none;
+  }

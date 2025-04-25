@@ -1,0 +1,143 @@
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+  }
+
+  th {
+    background-color: #9957E4;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  td {
+    background-color: #eeeeee;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  td:first-child, th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  td:last-child, th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  [colspan="2"] {
+    border-radius: 0;
+  }
+
+  tr:nth-last-child(2) td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  tr:nth-last-child(2) td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  tr:last-child td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  tr:last-child td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .linha-destaque td {
+    background-color: #9957E4;
+    color: white;
+    font-weight: 300;
+  }
+
+  .mencao {
+    font-weight: 300;
+    font-size: 18px;
+    color: white;
+  }
+
+  .feedbacks {
+    background-color: #a25cd1;
+    padding: 20px 15px;
+    border-radius: 25px;
+  }
+
+  .feedbacks h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .feedback {
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    transition: all 0.5s ease;
+    position: relative;
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                rgba(0, 0, 0, 0.05) 0px 4px 6px -2px,
+                rgba(255, 255, 255, 0.1) 0px -2px 0px inset;
+  }
+
+  .feedback > div {
+    flex: 1;
+  }
+
+  .feedback .material-symbols-outlined {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 32px;
+    color: #6d238f;
+  }
+
+  .feedback .profile-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 32px;
+    color: #6d238f;
+  }
+
+  .feedback:hover {
+    transform: scale(1.02);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  }
+
+  .feedback img {
+    margin-top: 20px;
+  }
+  @media (max-width: 480px) {
+
+    .feedback {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
