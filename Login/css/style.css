@@ -955,3 +955,123 @@ max-width: 600px;
     border-radius: 20px;
     margin-bottom: 1%;
   }
+
+
+  .projetos-content{
+    background-color: #f9f6ee;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .title{
+    color: black ;
+  }
+
+  /* Seção principal de projetos */
+.projetos-content {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+}
+
+/* Título da seção */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Campo de busca */
+.buscador-de-projetos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.campo-de-busca {
+  width: 90%;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 14px;
+}
+
+/* Botão de criar projeto */
+.botao-criador-de-projetos {
+  display: block;
+  margin: 10px auto 25px auto;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #d64af0, #8f6df2);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Galeria de cartões */
+.galeria-de-cartoes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cartão de projeto */
+.cartao-do-projeto {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Títulos e infos */
+.titulo-do-projeto {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.info-criador,
+.info-stand {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Botão entrar */
+.botao-entrar {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  padding: 8px 18px;
+  background: linear-gradient(to right, #d64af0, #8f6df2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Responsivo (opcional) */
+@media (min-width: 600px) {
+  .galeria-de-cartoes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .cartao-do-projeto {
+    width: 48%;
+  }
+}
+
+@media (min-width: 900px) {
+  .cartao-do-projeto {
+    width: 30%;
+  }
+}
