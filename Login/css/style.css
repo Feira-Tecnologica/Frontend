@@ -1056,3 +1056,14 @@ max-width: 600px;
     }
   }
   
+/* Davizin */
+
+  @media (max-width: 768px) {
+    .sobre-container {
+      margin: auto;
+      width: 70%;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+  }
