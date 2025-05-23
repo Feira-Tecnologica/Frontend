@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão de Notas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/notas_professores.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="../img/topo.png" alt="Elemento decorativo" class="top-vector">
+        <img src="../img/logo_etec.png" alt="Logo ETEC" class="logo">
+        
+        <div class="content-container">
+            <div class="avaliacao">
+                <div class="header-avaliacao">
+                    <i class="material-icons">arrow_back_ios</i>
+                    <div class="breadcrumb">
+                        <a href="../index.html">Projeto</a> &gt; <span>Revisão de Notas</span>
+                    </div>
+                </div>
+                
+                <div class="atribuir-nota">
+                    <h1><strong>Revisão</strong><br>de notas</h1>
+                    
+                    <div class="stand-info">
+                        <div class="stand-text">
+                            <strong>STAND 45</strong>
+                            <p>Informática - 2C<br>Manhã</p>
+                        </div>
+                        <img src="../img/ODS/ODS_8.png" alt="ODS 8" class="ods-img">
+                    </div>
+                    
+                    <div class="tabela-notas">
+                        <div id="notasContainer">
+                            <!-- Notas serão inseridas aqui via JavaScript -->
+                        </div>
+                        
+                        <div class="linha-item media-row">
+                            <span class="criterio"><strong>Média Final</strong></span>
+                            <span class="nota">
+                                <input type="number" id="mediaFinal" class="input-nota media" readonly>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="botoes-container">
+                        <button class="btn-confirmar" id="btnEditar">Editar</button>
+                        <button class="btn-voltar" id="btnVoltar">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/revisao_notas.js"></script>
+</body>
+</html>

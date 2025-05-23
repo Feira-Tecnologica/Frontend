@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar projeto</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/criar_projeto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Simplify Material Icons import -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="container">
+          <img src="../img/topo.png" alt="Elemento decorativo" class="top-vector">
+          <img src="../img/logo_etec.png" alt="Logo ETEC" class="logo">
+          
+          <div class="content-container">
+   
+       
+<div class="card">
+    <div class="header-avaliacao">
+                <i class="material-icons">arrow_back_ios</i>
+                <div class="breadcrumb">
+                 <h2 class="card-title">Criar projeto</h2>
+                </div>
+              </div>
+    
+
+    <div class="field">
+      <label for="nomeProjeto">Nome do Projeto</label>
+      <input type="text" id="nomeProjeto" placeholder="Digite o nome do projeto" required />
+    </div>
+
+    <div class="project-box">
+      <div>
+        <strong>STAND 24</strong>
+        <span>Informática - 3C<br>Manhã</span>
+      </div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sustainable_Development_Goal_8.svg/1024px-Sustainable_Development_Goal_8.svg.png" alt="Ícone ODS 8" />
+    </div>
+
+    <div class="field">
+      <label>Integrantes</label>
+      <div class="integrantes-list" id="integrantesList">
+        <input type="text" placeholder="Integrante 1" required />
+      </div>
+      <button class="add-integrante" type="button" onclick="adicionarIntegrante()">+ Adicionar integrante</button>
+    </div>
+
+    <div class="field">
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" rows="3" placeholder="Digite a descrição do projeto" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="objetivo">Objetivo</label>
+      <textarea id="objetivo" rows="2" placeholder="Digite o objetivo do projeto" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="justificativa">Justificativa</label>
+      <textarea id="justificativa" rows="2" placeholder="Digite a justificativa do projeto" required></textarea>
+    </div>
+
+    <button class="btn-create" onclick="criarProjeto()">CRIAR</button>
+  </div>
+
+  <p class="footer">Algum problema? <a href="#">Reporte aqui</a>.</p>
+
+
+
+        </div>
+
+        <!-- Modal de confirmação -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <h2>Confirmação</h2>
+                <p>Tem certeza que deseja criar este projeto?</p>
+                <div class="modal-buttons">
+                    <button onclick="hideModal()">Cancelar</button>
+                    <button onclick="confirmCreate()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/criar_projeto.js"></script>
+    </body>
+</html>

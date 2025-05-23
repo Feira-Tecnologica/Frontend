@@ -1,0 +1,221 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #672D91 0%, #10002B 100%);
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+.title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px; 
+    font-size: 20px;
+  color: #672D91;
+  margin-bottom: 10px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumb {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1c1c1c;
+  }
+
+.material-icons {
+    font-size: 20px;
+    color: #C31191;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-bottom: 15px;
+  }
+ /* Adjust header layout */
+  .header-avaliacao {
+    justify-content: flex-start;
+    gap: 5px;
+   
+  }
+
+  .header-avaliacao {
+    display: flex;
+    align-items: center;
+  }
+
+.card-title{
+    text-align: left;
+}
+
+    .card {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 25px 20px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .card h2 {
+      text-align: left;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: black;
+      margin-left: 0;  /* Remove qualquer margem à esquerda */
+      padding-left: 0; /* Remove qualquer padding à esquerda */
+    }
+
+    .field {
+      margin-bottom: 15px;
+    }
+
+    .field label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      resize: none;
+    }
+
+    .project-box {
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .project-box div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-box img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .btn-create {
+    margin-top: 20px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #C31191 0%, #611CA6 50%, #C59AF6 100%);
+    background-size: 200% auto;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-position 1.0s ease;
+    background-position: 0 0;
+    filter: drop-shadow(0px 20px 50px rgba(0, 0, 0, 0.30));
+    width: 90%;
+  }
+  
+  .btn-create:hover {
+    background-position: 100% 0;
+    background-image: linear-gradient(90deg, #C59AF6 0%, #611CA6 50%, #C31191 100%);
+  }
+  
+  .btn-create:hover {
+    opacity: 0.9;
+  }
+
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: #6a00ff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .integrantes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .add-integrante {
+      background: none;
+      border: none;
+      color: #6a00ff;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.modal-buttons button:first-child {
+    background-color: #ccc;
+}
+
+.modal-buttons button:last-child {
+    background: linear-gradient(90deg, #C31191 0%, #611CA6 50%, #C59AF6 100%);
+    color: white;
+}
