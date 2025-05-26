@@ -178,3 +178,19 @@ lgForm.addEventListener('submit', function (e){
     }
 })
             
+//Davizin JS
+
+function ajustarClasseContainer() {
+    const container = document.getElementById("container");
+
+    if (window.innerWidth < 768) {
+      container.classList.remove("container");
+      container.classList.add("container-mobile");
+    } else {
+      container.classList.remove("container-mobile");
+      container.classList.add("container");
+    }
+  }
+
+  window.addEventListener("resize", ajustarClasseContainer);
+  window.addEventListener("DOMContentLoaded", ajustarClasseContainer);

@@ -385,4 +385,11 @@ input {
 }
                                           
                                          
-            
+/* Davizin */
+
+@media (max-width: 768px) {
+  .container {
+    background-color: black;
+    padding: 100px;
+  }
+}
