@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar projeto</title>
+  <link rel="stylesheet" href="../../css/criar_projeto.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <img src="../../img/topo.png" alt="Elemento decorativo" class="top-vector" />
+    <img src="../../img/logo_etec.png" alt="Logo ETEC" class="logo" />
+
+
+    <div class="content-container">
+      <div class="card">
+        <div class="header-avaliacao">
+          <i class="material-icons">arrow_back_ios</i>
+          <div class="breadcrumb">
+            <h2 class="card-title">Criar projeto</h2>
+          </div>
+        </div>
+
+        <!-- 🔗 FORMULÁRIO INTEGRADO COM PHP -->
+        <form method="POST" action="cadastrar_projeto.php" onsubmit="return prepararDados()">
+          <!-- Campos invisíveis para enviar via POST -->
+          <input type="hidden" name="nomeProjeto" id="inputNomeProjeto" />
+          <input type="hidden" name="descricao" id="inputDescricao" />
+          <input type="hidden" name="objetivo" id="inputObjetivo" />
+          <input type="hidden" name="justificativa" id="inputJustificativa" />
+          <div id="integrantesInputs"></div>
+
+          <div class="field">
+            <label for="nomeProjeto">Nome do Projeto</label>
+            <input type="text" id="nomeProjeto" placeholder="Digite o nome do projeto" required />
+          </div>
+
+          <div class="project-box">
+            <div>
+              <strong>STAND 24</strong><br>
+              <span>Informática - 3C<br>Manhã</span>
+            </div>
+            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg" alt="Ícone ODS 8" />
+          </div>
+
+          <div class="field">
+            <label>Integrantes</label>
+            <div class="integrantes-list" id="integrantesList">
+              <input type="text" placeholder="Integrante 1" required />
+            </div>
+            <button class="add-integrante" type="button" onclick="adicionarIntegrante()">+ Adicionar integrante</button>
+          </div>
+
+          <div class="field">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" rows="3" placeholder="Digite a descrição do projeto" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="objetivo">Objetivo</label>
+            <textarea id="objetivo" rows="2" placeholder="Digite o objetivo do projeto" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="justificativa">Justificativa</label>
+            <textarea id="justificativa" rows="2" placeholder="Digite a justificativa do projeto" required></textarea>
+          </div>
+
+          <button class="btn-create" type="submit">CRIAR</button>
+        </form>
+
+        <p class="footer">Algum problema? <a href="#">Reporte aqui</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function adicionarIntegrante() {
+      const lista = document.getElementById("integrantesList");
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Novo integrante";
+      input.required = true;
+      lista.appendChild(input);
+    }
+
+    function prepararDados() {
+      document.getElementById("inputNomeProjeto").value = document.getElementById("nomeProjeto").value;
+      document.getElementById("inputDescricao").value = document.getElementById("descricao").value;
+      document.getElementById("inputObjetivo").value = document.getElementById("objetivo").value;
+      document.getElementById("inputJustificativa").value = document.getElementById("justificativa").value;
+
+      const integrantesContainer = document.getElementById("integrantesInputs");
+      integrantesContainer.innerHTML = "";
+
+      const inputs = document.getElementById("integrantesList").querySelectorAll("input");
+      inputs.forEach((input) => {
+        const hidden = document.createElement("input");
+        hidden.type = "hidden";
+        hidden.name = "integrantes[]";
+        hidden.value = input.value;
+        integrantesContainer.appendChild(hidden);
+      });
+
+      return true;
+    }
+  </script>
+</body>
+</html>
