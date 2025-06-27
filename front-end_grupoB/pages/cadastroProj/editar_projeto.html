@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Criar projeto</title>
+  <title>Editar Projeto</title>
   <link rel="stylesheet" href="../../css/criar_projeto.css" />
   <link rel="stylesheet" href="../../css/style.css" />
   <link rel="stylesheet" href="../../css/ods.css" />
@@ -15,19 +15,17 @@
     <img src="../../img/topo.png" alt="Elemento decorativo" class="top-vector" />
     <img src="../../img/logo_etec.png" alt="Logo ETEC" class="logo" />
 
-
     <div class="content-container">
       <div class="card">
         <div class="header-avaliacao">
-            <a href="../escolher_projeto.html"><i class="material-icons">arrow_back_ios</i></a>
+          <a href="visualizar_projeto.html"><i class="material-icons">arrow_back_ios</i></a>
           <div class="breadcrumb">
-            <h2 class="card-title">Criar projeto</h2>
+            <h2 class="card-title">Editar Projeto</h2>
           </div>
         </div>
 
-        <!-- 🔗 FORMULÁRIO INTEGRADO COM PHP -->
-        <form method="POST" action="cadastrar_projeto.php" onsubmit="return prepararDados()">
-          <!-- Campos invisíveis para enviar via POST -->
+        <form method="POST" action="atualizar_projeto.php" onsubmit="return prepararDados()">
+          <input type="hidden" name="projetoId" value="1" />
           <input type="hidden" name="nomeProjeto" id="inputNomeProjeto" />
           <input type="hidden" name="descricao" id="inputDescricao" />
           <input type="hidden" name="objetivo" id="inputObjetivo" />
@@ -37,7 +35,7 @@
 
           <div class="field">
             <label for="nomeProjeto">Nome do Projeto</label>
-            <input type="text" id="nomeProjeto" placeholder="Digite o nome do projeto" required />
+            <input type="text" id="nomeProjeto" placeholder="Digite o nome do projeto" value="Sistema de Gestão Escolar" required />
           </div>
 
           <div class="project-box">
@@ -67,17 +65,17 @@
 
           <div class="field">
             <label for="descricao">Descrição</label>
-            <textarea id="descricao" rows="3" placeholder="Digite a descrição do projeto" required></textarea>
+            <textarea id="descricao" rows="3" placeholder="Digite a descrição do projeto" required>Um sistema completo para gestão de atividades escolares, incluindo controle de notas, frequência e comunicação entre professores, alunos e pais.</textarea>
           </div>
 
           <div class="field">
             <label for="objetivo">Objetivo</label>
-            <textarea id="objetivo" rows="2" placeholder="Digite o objetivo do projeto" required></textarea>
+            <textarea id="objetivo" rows="2" placeholder="Digite o objetivo do projeto" required>Facilitar a gestão administrativa da escola e melhorar a comunicação entre todos os envolvidos no processo educacional.</textarea>
           </div>
 
           <div class="field">
             <label for="justificativa">Justificativa</label>
-            <textarea id="justificativa" rows="2" placeholder="Digite a justificativa do projeto" required></textarea>
+            <textarea id="justificativa" rows="2" placeholder="Digite a justificativa do projeto" required>A necessidade de modernizar os processos escolares e torná-los mais eficientes através da tecnologia.</textarea>
           </div>
 
           <div class="field">
@@ -85,7 +83,14 @@
             <div id="odsContainer"></div>
           </div>
 
-          <button class="btn-create" type="submit">CRIAR</button>
+          <div class="action-buttons-edit">
+            <button class="btn-cancel" type="button" onclick="window.location.href='visualizar_projeto.html'">
+              CANCELAR
+            </button>
+            <button class="btn-save" type="submit">
+              SALVAR ALTERAÇÕES
+            </button>
+          </div>
         </form>
 
         <p class="footer">Algum problema? <a href="#">Reporte aqui</a>.</p>
@@ -129,11 +134,21 @@
       `).join('');
     }
 
-    // Initialize integrantes list
+    // Initialize with existing data
     document.addEventListener('DOMContentLoaded', function() {
+      // Pre-populate integrantes
+      const existingIntegrantes = ["João Silva", "Maria Santos", "Pedro Oliveira", "Ana Costa"];
+      existingIntegrantes.forEach(nome => selectedIntegrantes.add(nome));
       updateIntegrantesList();
       
-      // Add event listener to select
+      // Pre-populate ODS
+      if (window.odsSelector) {
+        setTimeout(() => {
+          window.odsSelector.addODS(4);
+          window.odsSelector.addODS(9);
+        }, 100);
+      }
+      
       document.getElementById("integrantesSelect").addEventListener('change', function(e) {
         if (e.target.value) {
           adicionarIntegrante();
@@ -147,12 +162,10 @@
       document.getElementById("inputObjetivo").value = document.getElementById("objetivo").value;
       document.getElementById("inputJustificativa").value = document.getElementById("justificativa").value;
       
-      // Adicionar dados dos ODS selecionados
       if (window.odsSelector) {
         document.getElementById("inputODS").value = JSON.stringify(window.odsSelector.getSelectedODS());
       }
 
-      // Preparar dados dos integrantes
       const integrantesContainer = document.getElementById("integrantesInputs");
       integrantesContainer.innerHTML = "";
 
@@ -164,7 +177,6 @@
         integrantesContainer.appendChild(hidden);
       });
 
-      // Validar se pelo menos um integrante foi selecionado
       if (selectedIntegrantes.size === 0) {
         alert("Selecione pelo menos um integrante para o projeto.");
         return false;
