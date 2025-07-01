@@ -1,100 +1,83 @@
+/* Reset e configurações base */
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    body {
-      background: linear-gradient(180deg, #672D91 0%, #10002B 100%);
-      color: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      min-height: 100vh;
-    }
-
-.title{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 25px; 
-    font-size: 20px;
-  color: #672D91;
-  margin-bottom: 10px;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+/* Header e navegação */
+.header-avaliacao {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .breadcrumb {
-    flex: 1;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    color: #1c1c1c;
-  }
-
-.material-icons {
-    font-size: 20px;
-    color: #C31191;
-    cursor: pointer;
-    margin-left: 5px;
-    margin-bottom: 15px;
-  }
- /* Adjust header layout */
-  .header-avaliacao {
-    justify-content: flex-start;
-    gap: 5px;
-   
-  }
-
-  .header-avaliacao {
-    display: flex;
-    align-items: center;
-  }
-
-.card-title{
-    text-align: left;
+  flex: 1;
+  text-align: left;
 }
 
-    .card {
-      background-color: #fff;
-      border-radius: 20px;
-      padding: 25px 20px;
-      width: 100%;
-      max-width: 400px;
-    }
+.card-title {
+  text-align: left;
+  font-weight: 600;
+  margin: 0;
+  color: #1c1c1c;
+  font-size: 18px;
+}
 
-    .card h2 {
-      text-align: left;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: black;
-      margin-left: 0;  /* Remove qualquer margem à esquerda */
-      padding-left: 0; /* Remove qualquer padding à esquerda */
-    }
+.material-icons {
+  font-size: 20px;
+  color: #C31191;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
-    .field {
-      margin-bottom: 15px;
-    }
+.material-icons:hover {
+  color: #611CA6;
+}
 
-    .field label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 5px;
-    }
+/* Card e formulário */
+.card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 400px;
+}
 
-    .field input,
-    .field textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 14px;
-      resize: none;
-    }
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  resize: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #672D91;
+  box-shadow: 0 0 0 3px rgba(103, 45, 145, 0.1);
+}
 
     .project-box {
       background-color: white;

@@ -241,6 +241,111 @@ body {
   text-decoration: underline;
 }
 
+/* Estilos para seção de notas na visualização */
+.secao-notas {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.notas-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.nota-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #672D91;
+}
+
+.nota-valor {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.nota-resumo {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #672D91 0%, #8e44ad 100%);
+    border-radius: 12px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.media-final, .mencao-final {
+    text-align: center;
+}
+
+.nota-valor.destaque, .mencao-valor.destaque {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.comentario {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fff3e0;
+    border-radius: 8px;
+    border-left: 4px solid #ff9800;
+}
+
+.comentario strong {
+    color: #f57c00;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.comentario p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Estados de carregamento */
+.loading-content {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.loading-content::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top: 2px solid #672D91;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nota-resumo {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .nota-valor.destaque, .mencao-valor.destaque {
+        font-size: 20px;
+    }
+}
+
 @media (max-width: 480px) {
   .card {
     max-width: 350px;
