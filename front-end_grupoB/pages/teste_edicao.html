@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Edição de Projeto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste - Funcionalidade de Edição de Projetos</h1>
+    
+    <div id="resultado"></div>
+    
+    <h2>Testar Atualização de Projeto</h2>
+    <p>Clique no botão abaixo para testar a funcionalidade de edição:</p>
+    
+    <button onclick="testarEdicao()">Testar Edição de Projeto</button>
+    
+    <h2>Instruções para uso:</h2>
+    <ol>
+        <li>Execute o arquivo <code>migration_projeto_edicao.sql</code> no seu banco de dados para adicionar os campos necessários</li>
+        <li>Acesse a página <code>editar_projeto.html</code></li>
+        <li>Faça as alterações desejadas nos campos do projeto</li>
+        <li>Clique em "SALVAR ALTERAÇÕES"</li>
+        <li>O projeto será atualizado no banco de dados</li>
+    </ol>
+    
+    <h2>Funcionalidades implementadas:</h2>
+    <ul>
+        <li>✅ Edição do nome do projeto</li>
+        <li>✅ Edição da descrição</li>
+        <li>✅ Edição do objetivo</li>
+        <li>✅ Edição da justificativa</li>
+        <li>✅ Gerenciamento de integrantes (adicionar/remover)</li>
+        <li>✅ Seleção de ODS (Objetivos de Desenvolvimento Sustentável)</li>
+        <li>✅ Validação de campos obrigatórios</li>
+        <li>✅ Feedback visual durante o salvamento</li>
+    </ul>
+
+    <script>
+        function testarEdicao() {
+            const resultado = document.getElementById('resultado');
+            
+            // Simular dados de teste
+            const dadosTeste = new FormData();
+            dadosTeste.append('projetoId', '1');
+            dadosTeste.append('nomeProjeto', 'Projeto Teste - Editado');
+            dadosTeste.append('descricao', 'Descrição do projeto editada');
+            dadosTeste.append('objetivo', 'Objetivo editado');
+            dadosTeste.append('justificativa', 'Justificativa editada');
+            dadosTeste.append('ods', JSON.stringify([4, 9, 11]));
+            dadosTeste.append('integrantes[]', 'João Silva');
+            dadosTeste.append('integrantes[]', 'Maria Santos');
+            
+            fetch('atualizar_projeto.php', {
+                method: 'POST',
+                body: dadosTeste
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.sucesso) {
+                    resultado.innerHTML = `<div class="success">✅ ${data.mensagem}</div>`;
+                } else {
+                    resultado.innerHTML = `<div class="error">❌ ${data.erro}</div>`;
+                }
+            })
+            .catch(error => {
+                resultado.innerHTML = `<div class="error">❌ Erro de conexão: ${error.message}</div>`;
+            });
+        }
+    </script>
+</body>
+</html>

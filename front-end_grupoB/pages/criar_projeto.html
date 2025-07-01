@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar projeto</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/criar_projeto.css" />
+  <link rel="stylesheet" href="../css/ods.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <img src="../img/topo.png" alt="Elemento decorativo" class="top-vector" />
+    <img src="../img/logo_etec.png" alt="Logo ETEC" class="logo" />
+
+
+    <div class="content-container">
+      <div class="card">
+        <div class="header-avaliacao">
+            <a href="escolher_projeto.html"><i class="material-icons">arrow_back_ios</i></a>
+          <div class="breadcrumb">
+            <h2 class="card-title">Criar projeto</h2>
+          </div>
+        </div>
+
+        <!-- 🔗 FORMULÁRIO INTEGRADO COM API -->
+        <form id="formCriarProjeto">
+
+          <div class="field">
+            <label for="nomeProjeto">Nome do Projeto</label>
+            <input type="text" id="nomeProjeto" placeholder="Digite o nome do projeto" required />
+          </div>
+
+          <div class="project-box">
+            <div class="stand-info">
+              <strong>STAND 24</strong>
+            </div>
+            <div class="class-info">
+              <span>Informática - 3C<br>Manhã</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Integrantes</label>
+            <div class="integrantes-select-wrapper">
+              <select class="integrantes-select" id="integrantesSelect">
+                <option value="">Selecione um integrante...</option>
+                <option value="João Silva">João Silva</option>
+                <option value="Maria Santos">Maria Santos</option>
+                <option value="Pedro Oliveira">Pedro Oliveira</option>
+                <option value="Ana Costa">Ana Costa</option>
+                <option value="Carlos Souza">Carlos Souza</option>
+                <option value="Lucia Ferreira">Lucia Ferreira</option>
+              </select>
+            </div>
+            <div class="integrantes-selected-list" id="integrantesSelectedList"></div>
+          </div>
+
+          <div class="field">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" rows="3" placeholder="Digite a descrição do projeto" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="objetivo">Objetivo</label>
+            <textarea id="objetivo" rows="2" placeholder="Digite o objetivo do projeto" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="justificativa">Justificativa</label>
+            <textarea id="justificativa" rows="2" placeholder="Digite a justificativa do projeto" required></textarea>
+          </div>
+
+          <div class="field">
+            <label>ODS (Objetivos de Desenvolvimento Sustentável)</label>
+            <div id="odsContainer"></div>
+          </div>
+
+          <button class="btn-create" type="submit">CRIAR</button>
+        </form>
+
+        <p class="footer">Algum problema? <a href="#">Reporte aqui</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/ods-selector.js"></script>
+  <script src="../js/criar_projeto.js"></script>
+</body>
+</html>

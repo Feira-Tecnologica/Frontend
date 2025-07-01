@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar Projeto</title>
+  <link rel="stylesheet" href="../css/criar_projeto.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../../css/ods.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <img src="../img/topo.png" alt="Elemento decorativo" class="top-vector" />
+    <img src="../img/logo_etec.png" alt="Logo ETEC" class="logo" />
+
+    <div class="content-container">
+      <div class="card">
+        <div class="header-avaliacao">
+          <a href="visualizar_projeto.html"><i class="material-icons">arrow_back_ios</i></a>
+          <div class="breadcrumb">
+            <h2 class="card-title">Editar Projeto</h2>
+          </div>
+        </div>
+
+        <form method="POST" action="atualizar_projeto.php" onsubmit="return prepararDados()">
+          <input type="hidden" name="projetoId" value="1" />
+          <input type="hidden" name="nomeProjeto" id="inputNomeProjeto" />
+          <input type="hidden" name="descricao" id="inputDescricao" />
+          <input type="hidden" name="objetivo" id="inputObjetivo" />
+          <input type="hidden" name="justificativa" id="inputJustificativa" />
+          <input type="hidden" name="ods" id="inputODS" />
+          <div id="integrantesInputs"></div>
+
+          <div class="field">
+            <label for="nomeProjeto">Nome do Projeto</label>
+            <input type="text" id="nomeProjeto" placeholder="Digite o nome do projeto" value="Sistema de Gestão Escolar" required />
+          </div>
+
+          <div class="project-box">
+            <div class="stand-info">
+              <strong>STAND 24</strong>
+            </div>
+            <div class="class-info">
+              <span>Informática - 3C<br>Manhã</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Integrantes</label>
+            <div class="integrantes-select-wrapper">
+              <select class="integrantes-select" id="integrantesSelect">
+                <option value="">Selecione um integrante...</option>
+                <option value="João Silva">João Silva</option>
+                <option value="Maria Santos">Maria Santos</option>
+                <option value="Pedro Oliveira">Pedro Oliveira</option>
+                <option value="Ana Costa">Ana Costa</option>
+                <option value="Carlos Souza">Carlos Souza</option>
+                <option value="Lucia Ferreira">Lucia Ferreira</option>
+              </select>
+            </div>
+            <div class="integrantes-selected-list" id="integrantesSelectedList"></div>
+          </div>
+
+          <div class="field">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" rows="3" placeholder="Digite a descrição do projeto" required>Um sistema completo para gestão de atividades escolares, incluindo controle de notas, frequência e comunicação entre professores, alunos e pais.</textarea>
+          </div>
+
+          <div class="field">
+            <label for="objetivo">Objetivo</label>
+            <textarea id="objetivo" rows="2" placeholder="Digite o objetivo do projeto" required>Facilitar a gestão administrativa da escola e melhorar a comunicação entre todos os envolvidos no processo educacional.</textarea>
+          </div>
+
+          <div class="field">
+            <label for="justificativa">Justificativa</label>
+            <textarea id="justificativa" rows="2" placeholder="Digite a justificativa do projeto" required>A necessidade de modernizar os processos escolares e torná-los mais eficientes através da tecnologia.</textarea>
+          </div>
+
+          <div class="field">
+            <label>ODS (Objetivos de Desenvolvimento Sustentável)</label>
+            <div id="odsContainer"></div>
+          </div>
+
+          <div class="action-buttons-edit">
+            <button class="btn-cancel" type="button" onclick="window.location.href='visualizar_projeto.html'">
+              CANCELAR
+            </button>
+            <button class="btn-save" type="submit">
+              SALVAR ALTERAÇÕES
+            </button>
+          </div>
+        </form>
+
+        <p class="footer">Algum problema? <a href="#">Reporte aqui</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/ods-selector.js"></script>
+  <script>
+    let selectedIntegrantes = new Set();
+
+    function adicionarIntegrante() {
+      const select = document.getElementById("integrantesSelect");
+      const selectedValue = select.value;
+      
+      if (selectedValue && !selectedIntegrantes.has(selectedValue)) {
+        selectedIntegrantes.add(selectedValue);
+        updateIntegrantesList();
+        select.value = "";
+      }
+    }
+
+    function removerIntegrante(nome) {
+      selectedIntegrantes.delete(nome);
+      updateIntegrantesList();
+    }
+
+    function updateIntegrantesList() {
+      const listContainer = document.getElementById("integrantesSelectedList");
+      
+      if (selectedIntegrantes.size === 0) {
+        listContainer.innerHTML = '<div class="integrantes-empty">Nenhum integrante selecionado</div>';
+        return;
+      }
+      
+      listContainer.innerHTML = Array.from(selectedIntegrantes).map(nome => `
+        <div class="integrante-item">
+          <span>${nome}</span>
+          <button type="button" class="remove-integrante-btn" onclick="removerIntegrante('${nome}')">×</button>
+        </div>
+      `).join('');
+    }
+
+    // Initialize with existing data
+    document.addEventListener('DOMContentLoaded', function() {
+      // Pre-populate integrantes
+      const existingIntegrantes = ["João Silva", "Maria Santos", "Pedro Oliveira", "Ana Costa"];
+      existingIntegrantes.forEach(nome => selectedIntegrantes.add(nome));
+      updateIntegrantesList();
+      
+      // Pre-populate ODS
+      if (window.odsSelector) {
+        setTimeout(() => {
+          window.odsSelector.addODS(4);
+          window.odsSelector.addODS(9);
+        }, 100);
+      }
+      
+      document.getElementById("integrantesSelect").addEventListener('change', function(e) {
+        if (e.target.value) {
+          adicionarIntegrante();
+        }
+      });
+    });
+
+    function prepararDados() {
+      document.getElementById("inputNomeProjeto").value = document.getElementById("nomeProjeto").value;
+      document.getElementById("inputDescricao").value = document.getElementById("descricao").value;
+      document.getElementById("inputObjetivo").value = document.getElementById("objetivo").value;
+      document.getElementById("inputJustificativa").value = document.getElementById("justificativa").value;
+      
+      if (window.odsSelector) {
+        document.getElementById("inputODS").value = JSON.stringify(window.odsSelector.getSelectedODS());
+      }
+
+      const integrantesContainer = document.getElementById("integrantesInputs");
+      integrantesContainer.innerHTML = "";
+
+      Array.from(selectedIntegrantes).forEach((nome) => {
+        const hidden = document.createElement("input");
+        hidden.type = "hidden";
+        hidden.name = "integrantes[]";
+        hidden.value = nome;
+        integrantesContainer.appendChild(hidden);
+      });
+
+      if (selectedIntegrantes.size === 0) {
+        alert("Selecione pelo menos um integrante para o projeto.");
+        return false;
+      }
+
+      // Adicionar feedback visual
+      const submitBtn = document.querySelector('.btn-save');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'SALVANDO...';
+
+      return true;
+    }
+  </script>
+</body>
+</html>
