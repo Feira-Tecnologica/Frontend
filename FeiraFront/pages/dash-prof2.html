@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IV Feira Tecnológica</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="tovoandoaltoooooooo">
+  <img class="tumbalacatumba" src="img/uppfundo.png" alt="Imagem topo" />
+
+  <nav>
+    <a href="dash-prof.html" class="btn iagodogorfo">Início</a>
+    <a href="dash-prof2.html" class="btn iagodogorfo">Projeto</a>
+    <a href="dash-prof3.html" class="btn iagodogorfo">Comentários</a>
+  </nav>
+
+  <img class="lucasimenso" src="img/etec-logo.png" alt="Logo ETEC" />
+  <h1 class="vcinmiseria">Bem-vindo(a) "nome do professor"</h1>
+
+  <div class="ligapostralha">
+    <h2 class="titulo-projetos">Projetos atribuídos</h2>
+    <input type="text" placeholder="Pesquisar projeto..." class="barra-pesquisa" />
+
+    <div class="jojotodinho">
+      <div class="card-projeto">
+        <div class="veigamedaseumanguito fluminensegigante">
+          <h3>Projeto 1</h3>
+          <span class="fuevalidado peroqueno">Não avaliado</span>
+        </div>
+        <button class="avaliar-btn">Ver projeto</button>
+      </div>
+      <div class="veigamedaseumanguito padireita">
+        <p>Informática - Manhã</p>
+        <p>2°C</p>
+      </div>
+    </div>
+
+    <div class="jojotodinho">
+      <div class="card-projeto">
+        <div class="veigamedaseumanguito fluminensegigante">
+          <h3>Projeto 2</h3>
+          <span class="fuevalidado peroquesi">Avaliado</span>
+        </div>
+        <button class="avaliar-btn">Ver projeto</button>
+      </div>
+      <div class="veigamedaseumanguito padireita">
+        <p>Administração - Manhã</p>
+        <p>1°A</p>
+      </div>
+    </div>
+  </div>
+
+  <img class="pepedotalas" src="img/downfundo.png" alt="Imagem fundo" />
+
+  <script>
+    document.querySelectorAll('.avaliar-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.location.href = "/Frontend/front-end_grupoB/notas_professores.html";
+      });
+    });
+  </script>
+</body>
+</html>

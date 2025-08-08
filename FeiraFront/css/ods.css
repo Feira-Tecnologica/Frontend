@@ -1,0 +1,141 @@
+.ods-container {
+    margin: 10px 0;
+}
+
+.ods-select-wrapper {
+    margin-bottom: 15px;
+}
+
+.ods-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.ods-select:focus {
+    outline: none;
+    border-color: #672d91;
+    box-shadow: 0 0 0 2px rgba(103, 45, 145, 0.2);
+}
+
+.ods-selected-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.ods-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    background: linear-gradient(90deg, #c31191 0%, #611ca6 100%);
+    color: white;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.ods-item .ods-number {
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.ods-item .remove-btn {
+    margin-left: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+    transition: background-color 0.3s ease;
+}
+
+.ods-item .remove-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.ods-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.ods-card {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ods-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ods-header {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.ods-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.ods-description {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.ods-empty-state {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .ods-selected-list {
+        flex-direction: column;
+    }
+    
+    .ods-item {
+        justify-content: space-between;
+    }
+    
+    .ods-grid {
+        max-height: 150px;
+    }
+}

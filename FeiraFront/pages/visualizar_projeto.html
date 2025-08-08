@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualizar Projeto</title>
+  <link rel="stylesheet" href="../css/visualizar_projeto.css" />
+  <link rel="stylesheet" href="../css/styleB.css" />
+  <link rel="stylesheet" href="../css/ods.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <img src="../img/topo.png" alt="Elemento decorativo" class="top-vector" />
+    <img src="../img/logo_etec.png" alt="Logo ETEC" class="logo" />
+
+    <div class="content-container">
+      <div class="card">
+        <div class="header-avaliacao">
+          <a href="escolher_projeto.html"><i class="material-icons">arrow_back_ios</i></a>
+          <div class="breadcrumb">
+            <h2 class="card-title">Visualizar Projeto</h2>
+          </div>
+          <a href="editar_projeto.html"><i class="material-icons edit-icon">edit</i></a>
+        </div>
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-name">Carregando...</h3>
+            <div class="project-box">
+              <div class="stand-info">
+                <strong>STAND --</strong>
+              </div>
+              <div class="class-info">
+                <span>Carregando...<br>--</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section-title">
+              <i class="material-icons">group</i>
+              Integrantes
+            </h4>
+            <div class="integrantes-display">
+              <p>Carregando integrantes...</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section-title">
+              <i class="material-icons">description</i>
+              Descrição
+            </h4>
+            <div class="section-content">
+              Um sistema completo para gestão de atividades escolares, incluindo controle de notas, frequência e comunicação entre professores, alunos e pais.
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section-title">
+              <i class="material-icons">flag</i>
+              Objetivo
+            </h4>
+            <div class="section-content">
+              Facilitar a gestão administrativa da escola e melhorar a comunicação entre todos os envolvidos no processo educacional.
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section-title">
+              <i class="material-icons">lightbulb</i>
+              Justificativa
+            </h4>
+            <div class="section-content">
+              A necessidade de modernizar os processos escolares e torná-los mais eficientes através da tecnologia.
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section-title">
+              <i class="material-icons">public</i>
+              ODS - Objetivos de Desenvolvimento Sustentável
+            </h4>
+            <div class="ods-display">
+              <div class="ods-item-display">
+                <div class="ods-icon" style="background-color: #C5192D">4</div>
+                <div class="ods-info">
+                  <strong>ODS 4 - Educação de Qualidade</strong>
+                  <p>Assegurar a educação inclusiva e equitativa de qualidade</p>
+                </div>
+              </div>
+              <div class="ods-item-display">
+                <div class="ods-icon" style="background-color: #FD6925">9</div>
+                <div class="ods-info">
+                  <strong>ODS 9 - Indústria, Inovação e Infraestrutura</strong>
+                  <p>Construir infraestruturas resilientes e promover a inovação</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-edit" onclick="window.location.href='editar_projeto.html'">
+              <i class="material-icons">edit</i>
+              EDITAR PROJETO
+            </button>
+            <button class="btn-delete" onclick="confirmarExclusao()">
+              <i class="material-icons">delete</i>
+              EXCLUIR PROJETO
+            </button>
+          </div>
+        </div>
+
+        <p class="footer">Algum problema? <a href="#">Reporte aqui</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/visualizar_projeto.js"></script>
+  <script>
+    function confirmarExclusao() {
+      if (confirm("Tem certeza que deseja excluir este projeto? Esta ação não pode ser desfeita.")) {
+        // Aqui você implementaria a lógica de exclusão
+        alert("Projeto excluído com sucesso!");
+        window.location.href = "escolher_projeto.html";
+      }
+    }
+  </script>
+</body>
+</html>
