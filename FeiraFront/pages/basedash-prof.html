@@ -1,26 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="css/style.css">
-    <title>IV Feira tecnologica</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>IV Feira Tecnológica - Dashboard Professor</title>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body class="tovoandoaltoooooooo">
-  <img class="tumbalacatumba" src="img/uppfundo.png" alt="">
-      <nav>
-        <a href="dash-prof.html" class="btn iagodogorfo">Início</a>
-        <a href="dash-prof2.html" class="btn iagodogorfo">Projeto</a>
-        <a href="dash-prof3.html" class="btn iagodogorfo">Comentários</a>
-      </nav>
+<body>
+  <!-- Vídeo de introdução -->
+  <div id="intro-video-container">
+    <video id="intro-video" autoplay muted playsinline>
+      <source src="video/intro.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </div>
 
-      <img class="lucasimenso" src="../img/etec-logo.png" alt="">
+  <!-- Navegação -->
+  <nav>
+    <a href="dash-prof.html" class="btn">Início</a>
+    <a href="dash-prof2.html" class="btn">Projeto</a>
+    <a href="dash-prof3.html" class="btn">Comentários</a>
+  </nav>
 
-      <h1 class="vcinmiseria">Bem vindo(a) "nome do professor"</h1>
-  
-    <div class="ligapostralha">
+  <!-- Banner -->
+  <section class="banner">
+    <div class="banner-text">
+      <h1>Bem-vindo(a), Professor</h1>
+      <p>Este é o seu dashboard, onde poderá ver suas pendências e o mapa dos projetos.</p>
+      <a href="#ligapostralha"><button>Mostrar</button></a>
     </div>
-  <img class="pepedotalas" src="img/downfundo.png" alt="">
+  </section>
+
+  <!-- Conteúdo -->
+  <div class="container-geral">
+    <div class="red-box bloco-pendencia">
+      <p class="texto-pendencia">Você possui pendências!</p>
+      <h1 class="numero-projetos">5</h1>
+      <h2 class="texto-projetos">PROJETOS</h2>
+      <p class="subtexto">Sem avaliação</p>
+    </div>
+
+    <div class="blue-box bloco-mapa">
+      <h1 class="davizin">Mapa</h1>
+      <h2 class="titidedeus">Localize os projetos a serem avaliados!</h2>
+      <!-- Inserir iframe de mapa futuramente -->
+    </div>
+  </div>
+
+  <!-- Botão Sair -->
+  <div class="sair-btn">
+    <button>Sair</button>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
-<script src="js/script.js"></script>
 </html>

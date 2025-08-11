@@ -179,5 +179,104 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Video intro functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const videoContainer = document.getElementById("intro-video-container")
+  const video = document.getElementById("intro-video")
 
+  if (video && videoContainer) {
+    // Block scrolling during video
+    document.body.classList.add("block-scroll")
+
+    // Hide video after it ends or after 3 seconds
+    const hideVideo = () => {
+      videoContainer.classList.add("fade-out")
+      document.body.classList.remove("block-scroll")
+
+      setTimeout(() => {
+        videoContainer.style.display = "none"
+      }, 2500)
+    }
+
+    video.addEventListener("ended", hideVideo)
+
+    // Fallback: hide after 3 seconds regardless
+    setTimeout(hideVideo, 3000)
+
+    // Allow skip on click
+    videoContainer.addEventListener("click", hideVideo)
+  }
+})
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault()
+    const target = document.querySelector(this.getAttribute("href"))
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+  })
+})
+
+// Add loading states to buttons
+document.querySelectorAll("button").forEach((button) => {
+  button.addEventListener("click", function () {
+    if (!this.classList.contains("loading")) {
+      this.classList.add("loading")
+      setTimeout(() => {
+        this.classList.remove("loading")
+      }, 1000)
+    }
+  })
+})
+
+// Simple notification system
+function showNotification(message, type = "info") {
+  const notification = document.createElement("div")
+  notification.className = `notification ${type}`
+  notification.textContent = message
+
+  notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        background: ${type === "error" ? "#e74c3c" : type === "success" ? "#27ae60" : "#3498db"};
+        color: white;
+        border-radius: 8px;
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `
+
+  document.body.appendChild(notification)
+
+  setTimeout(() => {
+    notification.remove()
+  }, 3000)
+}
+
+// Add CSS for notification animation
+const style = document.createElement("style")
+style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    .loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+`
+document.head.appendChild(style)
 
