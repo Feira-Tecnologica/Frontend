@@ -1,0 +1,23 @@
+banco 
+
+projeto:
+- justificativa
+- objetivo
+
+- projeto_aluno
+
+- projeto_aluno_ods
+
+
+
+aluno:
+- disponivel (mudar para bit)
+
+
+backend:
+
+rota editar projeto
+(aluno e professor que criaram)
+
+
+
