@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="../css/dash-prof.css">
-    <title>IV Feira Tecnológica</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/dash-prof.css">
+  <title>IV Feira Tecnológica</title>
 </head>
 <body>
 
@@ -18,28 +18,27 @@
   <div class="banner-text">
     <h1>Bem-vindo (Professor)</h1>
     <p>Esse é o seu dashboard, onde terá suas pendências e o mapa</p>
-    <a href="#ligapostralha"><button>Mostrar</button></a>
+    <a href="#cards"><button>Mostrar</button></a>
   </div>
 </section>
 
-<div id="#ligapostralha" class="container-geral" onclick="window.location.href='dash-prof2.html'">
-  <div class="red-box bloco-pendencia">
+<section id="cards" class="container-geral">
+  <div class="bloco-pendencia" onclick="window.location.href='dash-prof2.html'">
     <p class="texto-pendencia">Você possui pendências!</p>
     <h1 class="numero-projetos">5</h1>
     <h2 class="texto-projetos">PROJETOS</h2>
     <p class="subtexto">Sem avaliação</p>
   </div>
 
-  <div class="blue-box bloco-mapa">
+  <div class="bloco-mapa" onclick="window.location.href='dash-prof3.html'">
     <h1 class="davizin">Mapa</h1>
     <h2 class="titidedeus">Localize os projetos a serem avaliados!</h2>
   </div>
-</div>
-    
+</section>
+
 <div class="cachorrochupetao">
   <button class="corremarreco"><h1>Sair</h1></button>
 </div>
 
-<script src="js/script.js"></script>
 </body>
 </html>

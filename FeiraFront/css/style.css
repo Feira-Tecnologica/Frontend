@@ -732,7 +732,6 @@ max-width: 600px;
     position: relative;
     z-index: 2;
     background-color: #ffffff; /* adiciona fundo branco */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* opcional, para destacar do fundo */
   }
 
 

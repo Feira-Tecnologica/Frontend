@@ -23,7 +23,7 @@ body.block-scroll {
   overflow: hidden;
 }
 
-/* Navbar no topo, com links alinhados à direita */
+/* Navbar */
 nav {
   display: flex;
   justify-content: flex-end;
@@ -45,8 +45,41 @@ nav a {
 }
 
 nav a.active {
-  color: #D2B4FF; /* Roxo claro para o link ativo */
+  color: #D2B4FF;
 }
+
+.btn {
+  font-size: 13px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #6C1BA8;
+  transition: width 0.5s ease;
+}
+
+.btn:hover {
+  color: #6C1BA8;
+  transition-delay: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
 /* Banner */
 .banner {
   display: flex;
@@ -55,14 +88,11 @@ nav a.active {
   justify-content: center;
   height: 100vh;
   padding: 0 20px;
-  position: relative;
-  overflow: hidden;
   background-color: #0B0B2B;
   background-image: url('../img/backgroundbnr.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
   text-align: center;
 }
 
@@ -91,72 +121,42 @@ nav a.active {
   transform: scale(1.05);
 }
 
-/* Botões de Navegação */
-.btn {
-  font-size: 13px;
-  background: transparent;
-  border: none;
-  padding: 1em 1.5em;
-  color: #9b59b6;
-  text-transform: uppercase;
-  position: relative;
-  transition: 0.5s ease;
-  cursor: pointer;
-}
-
-.btn::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background-color: #6C1BA8;
-  transition: width 0.5s ease;
-}
-
-.btn:hover {
-  color: #6C1BA8;
-  transition-delay: 0.5s;
-}
-
-.btn:hover::before {
-  width: 100%;
-}
-
 /* Cards Pendência e Mapa */
 .container-geral {
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 40px;
 }
 
-/* Cards Pendência e Mapa */
-.red-box, .blue-box {
+.bloco-pendencia, .bloco-mapa {
   flex: 1 1 300px;
-  margin: 10px;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 30px 20px;
+  border-radius: 20px;
   text-align: center;
-  background-color: #ffffff; /* fundo branco */
-  color: #000000; /* texto preto para contraste */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* leve sombra */
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.red-box .numero-projetos {
-  color: #e53935; /* cor do número */
+.bloco-pendencia {
+  background: #B400B9;
 }
 
-.blue-box .davizin {
-  color: #3d2a73; /* cor do título */
+.bloco-mapa {
+  background: #0066CC;
 }
 
+.bloco-pendencia:hover, .bloco-mapa:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
 
 /* Botão sair */
 .cachorrochupetao {
   text-align: center;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 .corremarreco {
@@ -169,16 +169,7 @@ nav a.active {
   cursor: pointer;
 }
 
-/* Animações */
 @keyframes slideInLeft {
   from { transform: translateX(-100px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
-
-@media (max-width: 768px) {
-  nav {
-    justify-content: center;
-    padding: 20px 10px;
-    flex-wrap: wrap;
-  }
-}  
