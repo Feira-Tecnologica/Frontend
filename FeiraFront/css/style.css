@@ -723,7 +723,7 @@ max-width: 600px;
     width: 100%;
   }
 
-  .ligapostralha{
+  .ligapostralha {
     width: 75%;
     margin: auto;
     border-radius: 20px;
@@ -731,8 +731,10 @@ max-width: 600px;
     padding: 2%;
     position: relative;
     z-index: 2;
-
+    background-color: #ffffff; /* adiciona fundo branco */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* opcional, para destacar do fundo */
   }
+
 
   .pepedotalas{
     width: 100%;
@@ -891,14 +893,14 @@ max-width: 600px;
   }
   
   .card-projeto {
-    background-color: #f9f9f9;
-    border-radius: 15px;
-    padding-left: 15px;
-    padding-top: 15px;
-    padding-right: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #fff; /* fundo branco */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
   
   .veigamedaseumanguito h3 {
@@ -1066,4 +1068,15 @@ max-width: 600px;
       text-align: center;
       align-items: center;
     }
+  }
+
+  .avaliar-btn {
+    background-color: #6C1BA8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
   }
